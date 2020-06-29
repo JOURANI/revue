@@ -1,0 +1,45 @@
+{% block title %}<title>Create Account</title>{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="{{ asset('build/register.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center; color: #565656">Creer un nouveau compte :</h1>
+    <div class="registration-form">
+        {{ form_start(registrationForm, {'attr': {'novalidate': 'novalidate'}}) }}
+
+
+        <div class="form-icon">
+            <span><i class="icon icon-user"></i></span>
+        </div>
+
+        <div class="form-group">
+            {{ form_row(registrationForm.nom,{'attr':{'class':'form-control item', 'placeholder': 'nom'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.prenom, {'attr':{'class':'form-control item', 'placeholder': 'prenom'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.adresse, {'attr':{'class':'form-control item', 'placeholder': 'adresse'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.tel, {'attr':{'class':'form-control item', 'placeholder': 'tel'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.email, {'attr':{'class':'form-control item', 'placeholder': 'email'}}) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(registrationForm.password, {'attr':{'class':'form-control item', 'placeholder': 'password'}}) }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-block create-account">Create Account</button>
+        </div>
+        {{ form_end(registrationForm) }}
+    </div>
+
+{% endblock %}
+ 
