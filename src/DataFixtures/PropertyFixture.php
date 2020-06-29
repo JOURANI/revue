@@ -28,7 +28,9 @@ class PropertyFixture extends Fixture
                 ->setCity($faker->city)
                 ->setAddress($faker->address)
                 ->setPostalCode($faker->postcode)
-                ->setSold(false);
+                ->setSold(false)
+                ->setUpdatedAt($faker->dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null))
+                ->setFilename($faker->words(3,true));
             $manager->persist($property);
         }
 
